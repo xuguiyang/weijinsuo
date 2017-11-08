@@ -1,0 +1,514 @@
+// 清除兼容问题
+@import "./normalize.less";
+// 清除默认样式
+@import "./reset.less";
+// 引入变量
+@import "./setting.less";
+
+html body{
+    width: 100%;
+}
+// 整体内容
+.wjs{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+// 顶部导航
+.topnav{
+    max-width: 100%;
+    height: @topHeight;
+    border-bottom: 1px solid @topBorderColor;
+
+
+    ul{
+        width: @smallWidth;
+        height:100%;
+        .center-block();
+        text-align: center;
+        line-height: 40px;
+    }
+    li{
+        float: left;
+        border-left: 1px solid @topBorderColor;
+
+    }
+    .qrcode{
+        width: @qrcodeWidth;
+        border-left: 0px;
+    }
+    .service{
+        width: @serviceWidth;
+    }
+    .extra{
+        width: @extraWidth;
+    }
+    .join{
+        width: @joinWidth;
+
+        .signup{
+            width: 100%;
+            height: 100%;
+            color: @white;
+            background-color: @signupColor;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+    }
+}
+
+// 导航
+.nav{
+    width:100%;
+    height: @navHeight;
+    border-bottom:1px solid @topBorderColor;
+    overflow: hidden;
+    ul{
+        width: @smallWidth;
+        height: 100%;
+        .center-block();
+        overflow: hidden;
+        img{
+            width: @navImgWidth;
+            height: auto;
+            margin-top: 15px;
+         }
+         li{
+             float: left;
+             height: 100%;
+             line-height: @navHeight;
+             padding: 0 15px;
+            font-size: 14px;
+            position: relative;
+            a{
+                display:inline-block;
+                height: 100%;
+                color: #666;
+
+            }
+            &:hover{
+                a{
+                    color: #333;
+                }
+                b{
+                    opacity: 1
+                }
+            }
+
+            b{
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                border: 2px solid red;opacity: 0;
+                transition: all 1s;
+            }
+
+         }
+         li:last-child{
+             float: right;
+         }
+
+    }
+
+
+}
+
+// 轮播图
+
+.swipe {
+    width: 100%;
+    overflow: hidden;
+    visibility: hidden;
+    position: relative;
+
+  .swipe-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+  .swipe-wrap > li {
+    float:left;
+    width:100%;
+    position: relative;
+    a {
+        display: block;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        // height: 400px;
+        vertical-align: middle;
+
+      }
+  }
+
+}
+// 专长
+.expertise{
+    max-width: @bigWidth;
+    .center-block();
+    padding: @exPadding;
+    overflow: hidden;
+
+    dl{
+        width: 100%/3;
+        // height: 100%;
+        float: left;
+        // padding: @dlPadding;
+
+        dt{
+            font-size: 20px;
+            padding-bottom: @dtBottom;
+        }
+        dd{
+            font-size: 15px;
+            padding-bottom: 15px;
+            span{
+                font-size: 14px;
+                font-family: @exFontFamily;
+                color: @exColor;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+
+// 通知
+.notify{
+    height: 85px;
+    border-bottom: 1px solid @topBorderColor;
+    border-top: 1px solid @topBorderColor;
+    .nr{
+        max-width:@bigWidth;
+        .center-block();
+        position: relative;
+        margin-top: 25px;
+        font-size: 14px;
+        p{
+            margin-bottom: 2px;
+            span{
+                color:@notifyColor;
+            }
+            a.qa{
+                color: @notifyColor;
+            }
+            a.qb{
+                color:@notifyqaColor;
+            }
+        }
+        p:last-child{
+            position: absolute;
+            top:0px;
+            right: 0px;
+            img{
+                width: auto;
+                height: @notifyImgHeight;
+
+            }
+        }
+    }
+}
+
+// 借贷
+.loan{
+    width: 100%;
+    padding: 20px 0;
+    background-image: url("../images/box-style-bg.png");
+    .tab-wrap{
+        width: 100%;
+        .tab{
+            max-width: @bigWidth;
+            height: @tabsHeight;
+            border-bottom: 1px solid @topBorderColor;
+            line-height: @tabsHeight;
+            .center-block();
+            // overflow: hidden;
+            li {
+                float: left;
+                padding:0 15px;
+                margin:0 15px;
+                position: relative;
+                &:hover{
+                    b{
+                        opacity: 1;
+                    }
+                }
+
+                a{
+                    font-size: 16px;
+                    color: @tabColoc;
+                    // line-height: @bigWidth;
+                }
+                b{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: @signupColor;
+                    padding-left: 15px;
+                    width: 100%;
+                    height: 2px;
+                    opacity: 0;
+                    transition: all 1s;
+
+                }
+            }
+
+        }
+    }
+    .intro{
+        max-width: @bigWidth;
+        height: @introHeihgt;
+        margin-top: 20px;
+        padding-left: 20px;
+        background-color: @white;
+        line-height: @introHeihgt;
+        font-size: 14px;
+        .center-block();
+        position: relative;
+        &:before{
+            content: "";
+
+            // background-color: red;
+            position: absolute;
+            top:-8px;
+            left: 50px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid @white;
+
+
+
+
+        }
+
+    }
+}
+
+.items{
+    max-width: @bigWidth;
+    // width: 100%;
+    height: 100%;
+    .center-block();
+    text-align: justify;
+    .tems:after{
+        content: "";
+        display: inline-block;
+        width: 100% ;
+        overflow: hidden;
+    }
+   
+    .item{
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 20px;
+        width: @itemWidth;
+        height: @itemHeight;
+        // padding-top: 15px;
+        // padding-bottom: 15px;
+        padding-right: 110px;
+        background-color: @white;
+        box-sizing: border-box;
+        box-shadow: 0 0 5px rgba(0 ,0,0,0.5);
+        border-radius: 5px;
+        position: relative;
+       
+
+        .item-left{
+            width: 100%;
+            height: 100%;
+            padding: 15px 30px 15px 15px;
+            box-sizing: border-box;
+            overflow: hidden;
+            dl dt{
+                width: 100%;
+                font-size: 13px;
+                font-weight: bold;
+                padding-bottom: 10px;
+
+            }
+            dl dd{
+                font-size: 12px;
+                padding-bottom: 12px;
+                overflow: hidden;
+                
+                &.large{
+                    font-size: 18px;                  
+                }
+                
+
+            }
+            .l{
+                float: left;
+            }
+            .r{
+                float: right;
+            }
+
+ 
+
+        }
+
+
+        .item-right{
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 110px;
+            height: 100%;
+            padding: 10px;
+            border-left: 1px dashed @topBorderColor;
+            text-align: center;
+            .font{
+                // text-align: center;
+                span{
+                    // display: inline-block;
+                    border: 1px solid;
+                    width: 16px;
+                    height: 16px;
+                    line-height: 16px;
+                    font-size: 14px;
+                    &.e {
+                        color: #399;
+                        border-color: #399;
+                      }
+                      &.b {
+                        color: #f56854;
+                        border-color: #f56854;
+                      }
+                }
+            }
+            h2{
+                margin-top: 25px;
+                margin-left: 5px;
+                font-size: 35px;
+                color: red;
+                small{
+                    font-size: 14px;
+                    padding-left: 4px;
+                }
+            }
+            p{
+                text-align: center;
+                margin-top: 10px;
+                font-weight: bold;
+                color: #721786;
+            }
+            b{
+                font-weight: normal;
+            }
+           
+        }
+    }
+}
+
+// 新闻
+.news{
+    width: 100%;
+    padding: @newsPadding;
+    overflow: hidden;
+    h6{
+        float: left;
+        width: @titleWidth;
+        padding: @titlePadding;
+        margin: 0 0 0 110px;
+        font-size: 16px;
+        font-weight: normal;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: -8px;
+            width: 8px;
+            height: 8px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            box-sizing: border-box;
+          }
+    }
+    .type{
+        float: left;
+        margin-left: @typeLeft;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width:1px;
+            height: 100%;
+            border-left: 1px dashed #ccc;
+          }
+        span{
+            display: block;
+            width: @typeSpanWidth;
+            height:  @typeSpanWidth;
+            background-color: #ccc;
+            margin-bottom: @marginBottom;
+            border-radius: 50%;
+            &:last-child {
+                margin-bottom: 0;
+              }
+        }
+    }
+    .list {
+        float: left;
+        margin-left: @listLeft;
+    
+        li {
+          height: 45px;
+          line-height: 50px;
+          font-size: 14px;
+        }
+      }
+    }
+// 底部
+   footer{
+       width: 100%;
+       margin-top: 30px;
+    .aboutme{
+        width: 100%;
+        height: 42px;
+        border-top: 1px solid @topBorderColor;
+        
+        line-height: 42px;
+        text-align: center;
+        font-size: 0px;
+        ul{
+            width: @smallWidth;
+            text-align: center;
+            font-size: 16px;
+            // .center-block();
+            margin-left: 300px;
+
+            li{
+                float: left;
+                margin:0 5px;
+            }
+        }
+    }
+    .copyright{
+        background-color: #666;
+        font-size: 13px;
+        color: @white;
+        text-align: center;
+        overflow: hidden;
+        padding: 25px 0;
+        // p{
+        //     margin-top: 25px;
+        // }
+        .company{
+            padding-top: 25px;
+        }
+        img{
+            width: auto;
+            height: 42px;
+            margin: 0 10px;
+        }
+   }
+}
+   
